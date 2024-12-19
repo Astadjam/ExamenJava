@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.Date;
 
@@ -12,17 +13,16 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String gender;
     private Date birthdate;
     public Patient() {
         super();
     }
-    Patient(int id, String firstName, String lastName, String gender, Date birthdate ) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    Patient(String firstname, String lastname, String gender, Date birthdate ) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.gender = gender;
         this.birthdate = birthdate;
     }
@@ -32,17 +32,17 @@ public class Patient {
     public void setId(int id) {
         this.id = id;
     }
-    public String getFirstName() {
-        return firstName;
+    public String getfirstname() {
+        return firstname;
     }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setfirstname(String firstname) {
+        this.firstname = firstname;
     }
-    public String getLastName() {
-        return lastName;
+    public String getlastname() {
+        return lastname;
     }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setlastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getGender() {
