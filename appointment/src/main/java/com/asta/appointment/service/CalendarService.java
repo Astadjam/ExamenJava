@@ -76,6 +76,7 @@ public class CalendarService {
             return calendar;
         }
         catch(Exception e){
+            System.out.println(e);
             return null;
         }
     }
